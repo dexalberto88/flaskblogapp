@@ -1,1 +1,1 @@
-web: gunicorn blogpamore:create_app
+web: gunicorn app:app
