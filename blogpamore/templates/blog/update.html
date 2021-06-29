@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title%}Update Post{% endblock %}
+
+{% block content %}
+    <h1>Update Post</h1>
+
+    <form method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title" value="{{ request.form['title'] or post['title'] }}">
+        </div>
+        <div class="mb-3">
+          <label for="body" class="form-label">Body</label>
+          <textarea class="form-control" id="body" rows="3" name="body">{{ request.form['body'] or post['body'] }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+{% endblock %}
