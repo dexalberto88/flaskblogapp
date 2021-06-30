@@ -7,7 +7,7 @@ db = SQLAlchemy()
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY = 'dev',
+        SECRET_KEY = b'\x13\x00\xef\xdb\xf7\x0e\xba\x7fTit)\xda\xce\xda\xe4',
         # DATABASE = os.path.join(app.instance_path, 'flaskr.sqlite')
         SQLALCHEMY_DATABASE_URI = 'sqlite:///blogpamore.sqlite'
     )

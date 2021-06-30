@@ -4,17 +4,20 @@
 
 {% block content %}
     {% if g.user %}
-    <a href="{{ url_for('blog.create') }}">New</a>
+        <a href="{{ url_for('blog.create') }}">New Blog</a> <br> <br>
     {% endif %}
-    
+
     {% for post in posts %}
-        <header>{{ post['title'] }}</header>
-        <p>{{ post['author'] }} {{ post['pub_date'].strftime("%Y-%m-%d %H:%M:%S") }}</p>
+        <h6>{{ post['title'] }}</h6>       
+        <p style="font-size: small;">{{ post['author'] }} {{ post['pub_date'].strftime("%Y-%m-%d %H:%M:%S") }}</p>
+        
         {% if g.user['id'] == post['user_id'] %}
-            <a href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
-            <a href="{{ url_for('blog.delete', id=post['id']) }}">Delete</a>
+            <a style="font-size: small;" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+            <a style="font-size: small;" href="{{ url_for('blog.delete', id=post['id']) }}">Delete</a>
         {% endif %}
-        <p>{{ post['body'] }}</p>
+        
+        <p style="white-space:pre-wrap">{{ post['body'] }}</p>
+        
         {% if not loop.last %}
             <hr>
         {% endif %}
