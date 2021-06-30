@@ -11,7 +11,7 @@
 
     <style>
       body {
-        background-image: url("{{ url_for('static', filename='pexels-roman-odintsov-6898860.jpg') }}");
+        background-image: linear-gradient(to right, #C9D6FF, #E2E2E2);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -22,7 +22,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{{ url_for('blog.index') }}">Blog Pa More</a>
+              <a class="navbar-brand" href="{{ url_for('blog.index') }}">BlogPaMore</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -43,7 +43,7 @@
                 </ul>
                 {% if g.user %}
                   <span class="navbar-text">
-                    Hi, {{ g.user.username}}
+                    Hi, {{ g.user.first_name }}
                   </span>
                 {% endif %}
               </div>
